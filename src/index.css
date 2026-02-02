@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AgroServ Ambassadors Programme Design System */
+
+@layer base {
+  :root {
+    /* Base Colors - Clean White Theme */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 0%; /* Dark charcoal */
+
+    /* Card Colors */
+    --card: 210 20% 96%;
+    --card-foreground: 220 15% 20%;
+
+    /* Primary - AgroServ Green */
+    --primary: 30 100% 50%; /* #5fa124 - Vibrant green from bird */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 95 65% 35%;
+
+    /* Secondary - AgroServ Orange */
+    --secondary: 95 65% 40%; /* #ff8c00 - Orange accent */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 30 100% 45%;
+
+    /* Accent Colors from Logo */
+    --accent-green: 95 65% 40%; /* Primary green */
+    --accent-orange: 30 100% 50%; /* Orange underline */
+    --accent-blue: 210 100% 45%; /* Blue lines in graphic */
+    --accent-gray: 220 10% 45%; /* Gray from text */
+
+    /* Muted backgrounds */
+    --muted: 210 40% 98.0392%; /* Light green tint */
+    --muted-foreground: 220 10% 45%;
+
+    /* Card accent backgrounds */
+    --card-green: 95 60% 92%;
+    --card-orange: 30 100% 95%;
+    --card-blue: 210 80% 95%;
+
+    /* Status Colors */
+    --success: 158 64% 52%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+    --info: 210 100% 45%;
+
+    /* UI Elements */
+    --border: 32 97.6744% 83.1373%;
+    --input: 220 15% 85%;
+    --ring: 212 96.3636% 78.4314%;
+    --radius: 0.75rem;
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-medium: 300ms ease-in-out;
+    --transition-slow: 500ms cubic-bezier(0.34, 1, 0.64, 1);
+    --font-sans: Manrope, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-serif: Lora, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --shadow-sm: 0px 1px 4.5px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow: 0px 1px 9px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow-md: 0px 1px 13.5px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow-lg: 0px 1px 22.5px 0px hsla(0, 0%, 0%, 0.2);
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 98%;
+    --card: 220 18% 15%;
+    --card-foreground: 0 0% 98%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 70%;
+    --font-sans: Manrope, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-serif: Lora, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --radius: 0.75rem;
+    --shadow-sm: 0px 1px 4.5px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow: 0px 1px 9px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow-md: 0px 1px 13.5px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow-lg: 0px 1px 22.5px 0px hsla(0, 0%, 0%, 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover 
+           text-primary-foreground font-semibold 
+           py-3 px-6 rounded-lg inline-flex items-center gap-2 
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-hover
+           text-secondary-foreground font-semibold 
+           py-3 px-6 rounded-lg inline-flex items-center gap-2 
+           transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply bg-transparent hover:bg-primary hover:text-primary-foreground
+           border-2 border-primary text-primary font-semibold 
+           py-3 px-6 rounded-lg inline-flex items-center gap-2 
+           transition-all duration-200;
+  }
+
+  /* Card Styles */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Typography Styles */
+  .heading-xl {
+    @apply font-extrabold text-4xl md:text-5xl lg:text-6xl 
+           tracking-tight leading-tight;
+  }
+
+  .heading-lg {
+    @apply font-bold text-3xl md:text-4xl tracking-tight leading-tight;
+  }
+
+  .heading-md {
+    @apply font-bold text-2xl md:text-3xl tracking-tight;
+  }
+
+  .heading-sm {
+    @apply font-semibold text-xl;
+  }
+
+  .body-text {
+    @apply text-base md:text-lg leading-relaxed text-foreground/80;
+  }
+
+  /* Section Styles */
+  .section-padding {
+    @apply px-5 md:px-12 lg:px-20 py-12 md:py-20;
+  }
+
+  /* Footer Styles */
+  .footer-header {
+    @apply font-semibold text-sm tracking-wide text-foreground mb-3;
+  }
+
+  .footer-link {
+    @apply text-sm text-foreground/70 hover:text-primary 
+           transition-colors duration-200;
+  }
+
+  /* Ambassador Card */
+  .ambassador-card-container {
+    @apply relative;
+    min-height: 420px;
+  }
+
+  .ambassador-card-inner {
+    @apply w-full h-full;
+  }
+
+  .ambassador-card {
+    @apply bg-card rounded-xl overflow-hidden shadow-sm border border-border
+           transition-shadow duration-300 hover:shadow-xl w-full h-full;
+  }
+}
