@@ -14,15 +14,15 @@ export interface Ambassador {
 export const ambassadors: Ambassador[] = [
   {
     id: "1",
-    name: "Dr.  ",
+    name: "Isabel Nogués",
     role: "Senior Researcher",
-    institution: "institution",
-    country: "France",
-    image: "",
-    bio: "Expert in agroecological transitions in arable cropping systems, focusing on diversifying crop rotations and reducing pesticide use.",
-    expertise: ["Agroecology", "Sustainable Agriculture", "Soil Health"],
-    linkedIn: "https://linkedin.com",
-    email: "marie.dubois@example.com"
+    institution: "Institute of Research on Terrestrial Ecosystems, Italian National Research Council",
+    country: "Italy",
+    image: "/images/isabel.png",
+    bio: "Isabel Nogués is a biochemist who began her scientific path exploring plants at the protein and cellular level. Her curiosity soon pushed her beyond the molecular scale—first to whole‑plant physiology, and later to the fascinating world of plant–soil interactions. Today, her passion for agroecology is driven by understanding how small biological processes influence entire ecosystems. Isabel loves connecting science with real landscapes, and when she’s not researching, she’s happiest outdoors discovering local nature and traditions.",
+    expertise: ["Biochar", "Plant physiology", "Biochemistry", "Degraded soils", "Circular economy"],
+    linkedIn: "https://www.linkedin.com/in/isabel-nogues-909318b3/",
+    email: "mariaisabel.noguesgonzalez@cnr.it"
   },
   {
     id: "2",
